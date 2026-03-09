@@ -1,0 +1,41 @@
+{
+  "name": "veil-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@starknet-io/get-starknet": "^4.0.0",
+    "@starknet-react/chains": "^3.1.0",
+    "@starknet-react/core": "^3.7.0",
+    "@tanstack/react-query": "^5.62.0",
+    "buffer": "^6.0.3",
+    "circomlibjs": "^0.1.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "garaga": "^1.0.1",
+    "is-nan": "^1.3.2",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "snarkjs": "^0.7.6",
+    "sonner": "^2.0.7",
+    "starknet": "^6.24.1",
+    "starknet-v7": "npm:starknet@9.4.2",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}
