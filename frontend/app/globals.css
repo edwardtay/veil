@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Roboto Mono", monospace;
+  --font-body: "Roboto Mono", monospace;
+  --font-mono: "Roboto Mono", monospace;
+
+  /* Light palette — void-950 is lightest (bg), void-50 is darkest (text) */
+  --color-void-950: #ffffff;
+  --color-void-900: #f9fafb;
+  --color-void-800: #f3f4f6;
+  --color-void-700: #e5e7eb;
+  --color-void-600: #9ca3af;
+  --color-void-500: #6b7280;
+  --color-void-400: #4b5563;
+  --color-void-300: #374151;
+  --color-void-200: #1f2937;
+  --color-void-100: #111827;
+  --color-void-50: #030712;
+
+  /* Warm sand for accents */
+  --color-sand-50: #1a1816;
+  --color-sand-100: #332f2a;
+  --color-sand-200: #4a443d;
+  --color-sand-300: #635b51;
+  --color-sand-400: #7d7367;
+  --color-sand-500: #9a9080;
+  --color-sand-600: #b8b0a0;
+  --color-sand-700: #d5cfc4;
+  --color-sand-800: #e8e4dd;
+  --color-sand-900: #f3f1ed;
+  --color-sand-950: #faf9f7;
+
+  /* Gold accent — high contrast on white */
+  --color-gold: #8a6d1f;
+  --color-gold-light: #a07e24;
+  --color-gold-dark: #6b5518;
+  --color-gold-muted: #8a6d1f18;
+
+  /* Override Tailwind greens for light-theme contrast */
+  --color-green-400: #15803d;
+  --color-green-500: #166534;
+
+  --color-success: #15803d;
+  --color-warning: #a16207;
+  --color-danger: #dc2626;
+  --color-info: #1d4ed8;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-void-950);
+  color: var(--color-void-400);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glow effects */
+.glow-gold {
+  box-shadow: 0 0 40px -10px rgba(184, 146, 42, 0.25);
+}
+
+.glow-soft {
+  box-shadow: 0 0 60px -15px rgba(184, 146, 42, 0.1);
+}
+
+/* Entrance animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to { background-position: 200% center; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Glass card — light frosted */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #b8922a 0%, #d4a843 50%, #b8922a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Step connector line */
+.step-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(184, 146, 42, 0.3), transparent);
+}
+
+/* Subtle grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(184, 146, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 146, 42, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* Pulse ring for hero */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.12; }
+  50% { transform: scale(1.2); opacity: 0.04; }
+  100% { transform: scale(0.8); opacity: 0.12; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+.pulse-ring-delayed {
+  animation: pulse-ring 4s ease-in-out 2s infinite;
+}
+
+/* Tree visual animations */
+@keyframes fade-in-node {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-in-line {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Glass card hover lift */
+.glass-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glass-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* Shimmer skeleton loading */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(243, 244, 246, 0.8) 25%,
+    rgba(229, 231, 235, 0.6) 50%,
+    rgba(243, 244, 246, 0.8) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Gold shimmer text effect */
+.text-shimmer {
+  background: linear-gradient(
+    110deg,
+    #8a6d1f 20%,
+    #b8922a 40%,
+    #d4a843 50%,
+    #b8922a 60%,
+    #8a6d1f 80%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Floating animation for subtle movement */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Scale-in for buttons/badges */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out both;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.6);
+}
