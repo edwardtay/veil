@@ -1,0 +1,64 @@
+target/
+.snfoundry_cache/
+snfoundry_trace/
+coverage/
+profile/
+Scarb.lock
+.env
+.env.local
+.env.*
+!.env.example
+
+# Private — deploy scripts, secrets, internal notes
+private/
+scripts/e2e_note.json
+frontend/scripts/
+deploy.sh
+snfoundry.toml
+CLAUDE.md
+DEMO_SCRIPT.md
+SUBMISSION.md
+privacy-pools-starknet-checklist.md
+
+# Test results
+test-results/
+
+# Node
+node_modules/
+.next/
+*.log
+*.tsbuildinfo
+
+# Circuits
+circuits/build/
+circuits/node_modules/
+*.ptau
+*.zkey
+*.r1cs
+*.sym
+
+# Python / Garaga
+.venv/
+.garaga-venv/
+__pycache__/
+
+# Playwright
+.playwright-mcp/
+.playwright-cli/
+
+# Screenshots
+*.png
+.vercel
+.env*.local
+
+# Claude Code local settings (may contain allowed commands with keys)
+.claude/settings.local.json
+.claude/projects/
+
+# Test files with hardcoded keys
+frontend/test_submit.js
+test_starknet.js
+
+# Misc scripts with potential secrets
+scripts/opcat_signet.ts
+server.js
