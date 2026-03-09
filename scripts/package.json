@@ -1,0 +1,9 @@
+{
+  "name": "veil-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "circomlibjs": "^0.1.7",
+    "starknet": "^8.6.0"
+  }
+}
